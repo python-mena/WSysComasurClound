@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+    
+    @Html.AntiForgeryToken()
+    <li class="dropdown dropdown-user">
+        <a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" data-close-others="true" data-hover="dropdown">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class="img-circle" alt="" src="/Content/template/layout/img/platzi.png">
+            <span class="username username-hide-on-mobile">   @User.Identity.GetUserName() </span>
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-default">
+            <li>
+                <a href="page_user_profile_1.html">
+                    <i class="icon-user"></i> Mi Perfil
+                </a>
+            </li>            
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()">
+                    <i class="icon-key"></i> Terminar Session 
+                </a>
+            </li>
+            </ul>
+
+</li>
+    }
+}
+else
+{
+    <!--
+        <li class="dropdown dropdown-user">@*Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })*@</li>
+    -->
+    <li class="dropdown dropdown-user">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+}

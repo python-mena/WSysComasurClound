@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/demo/assets/css/demo.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/demo/assets/css/form-builder.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/demo/assets/css/form-render.min.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+
+<body>
+    <center>
+        <h3 class="page-title">
+            Formularios Capturistas
+            <small> Security Comasur</small>
+        </h3>
+    </center>
+
+    @Scripts.Render("~/bundles/demo")
+
+
+    <div class="content">
+
+        <div class="build-wrap"></div>
+        <div class="render-wrap"></div>
+        <button id="edit-form">Edit Form</button>
+    </div>
+
+</body>
+
+
+</html>
